@@ -1,0 +1,20 @@
+/* ── Fonts loaded via index.html <link> ─────────────────────────────────── */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0a0f1e; }
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar              { width: 5px; height: 5px; }
+::-webkit-scrollbar-track        { background: #0a0f1e; }
+::-webkit-scrollbar-thumb        { background: #1e293b; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: #f97316; }
+
+/* ── Leaflet overrides ──────────────────────────────────────────────────── */
+.leaflet-container { font-family: 'IBM Plex Mono', monospace !important; }
+.leaflet-popup-content { margin: 10px 14px; font-size: 12px; }
+.leaflet-bar a, .leaflet-bar a:hover { background: #0d1526; color: #94a3b8; border-color: #1e293b; }
+
+/* ── Print styles ───────────────────────────────────────────────────────── */
+@media print {
+  body { background: white !important; }
+  nav, header, .MuiTabs-root, button { display: none !important; }
+}

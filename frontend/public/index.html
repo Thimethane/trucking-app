@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a0f1e" />
+  <meta name="description" content="FMCSA-compliant HOS trip planner for commercial truck drivers — route mapping, automated rest scheduling, and ELD log sheet generation." />
+  <meta property="og:title" content="TruckLogger HOS — FMCSA Compliance Engine" />
+  <meta property="og:description" content="Automated Hours of Service compliance for property-carrying drivers. Route planning, rest scheduling, and printable ELD log sheets." />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!-- Leaflet CSS (required for map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- IBM Plex fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <title>TruckLogger HOS — FMCSA Compliance Engine</title>
+  <style>
+    /* Prevent flash of unstyled content */
+    body { background: #0a0f1e; margin: 0; }
+    #root-loader {
+      position: fixed; inset: 0;
+      background: #0a0f1e;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: #334155; font-size: 13px; letter-spacing: 0.08em;
+      z-index: 9999;
+      transition: opacity 0.4s;
+    }
+    #root-loader .bar {
+      width: 200px; height: 3px; background: #0f2040; border-radius: 2px; overflow: hidden;
+    }
+    #root-loader .fill {
+      height: 100%; width: 40%; background: linear-gradient(90deg, #f97316, #0ea5e9);
+      border-radius: 2px;
+      animation: slide 1.2s ease-in-out infinite alternate;
+    }
+    @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+  </style>
+</head>
+<body>
+  <noscript>JavaScript is required to run TruckLogger HOS.</noscript>
+  <div id="root-loader">
+    <div style="font-size:11px;color:#1e3a5f">TRUCKLOGGER HOS</div>
+    <div class="bar"><div class="fill"></div></div>
+    <div>LOADING COMPLIANCE ENGINE…</div>
+  </div>
+  <div id="root"></div>
+  <script>
+    // Hide loader once React mounts
+    window.__hideLoader = function() {
+      var el = document.getElementById('root-loader');
+      if (el) { el.style.opacity = '0'; setTimeout(function(){ el.remove(); }, 400); }
+    };
+  </script>
+</body>
+</html>
