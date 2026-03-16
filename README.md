@@ -2,7 +2,7 @@
 
 > Full-stack logistics application that automates trip routing and Hours of Service (HOS) compliance for commercial truck drivers.
 
-**Live Demo:** `https://trucklogger-hos.vercel.app`  
+**Live Demo:** `https://trucklogger-frontend.onrender.com`  
 **Backend API:** `https://trucklogger-api.onrender.com`
 
 ---
@@ -197,7 +197,7 @@ Geocode a location string (proxied Nominatim).
 ```bash
 # Push to GitHub
 git init && git add . && git commit -m "init"
-git remote add origin https://github.com/youruser/trucking-app.git
+git remote add origin https://github.com/Thimethane/trucking-app.git
 git push
 
 # render.yaml is pre-configured — connect repo at render.com
@@ -224,7 +224,7 @@ npx vercel --prod
 ```env
 SECRET_KEY=your-production-secret-key
 DEBUG=False
-ALLOWED_HOSTS=trucklogger-api.onrender.com,localhost
+ALLOWED_HOSTS=https://trucklogger-api.onrender.com,localhost
 ```
 
 **Frontend:**

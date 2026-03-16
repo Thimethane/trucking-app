@@ -9,7 +9,7 @@
 
 ## Known Issue: Render Free Tier Cold Start
 
-> **Error:** `Connection failed — is the backend running at https://trucking-app-mxqx.onrender.com?`
+> **Error:** `Connection failed — is the backend running at https://trucklogger-api.onrender.com`
 
 **Cause:** Render's free tier spins the backend down after 15 minutes of inactivity.  
 **Fix:** Wait 30–60 seconds and try again — the first request wakes it up.  
@@ -289,7 +289,7 @@ Open any generated PNG and verify:
 To avoid the cold start issue during recording, hit the backend URL directly in the browser **2 minutes before** you start:
 
 ```
-https://trucking-app-mxqx.onrender.com/api/trips/geocode/?q=Chicago
+https://trucklogger-api.onrender.com/api/trips/geocode/?q=Chicago
 ```
 
 If you see JSON back, the backend is warm and ready.
